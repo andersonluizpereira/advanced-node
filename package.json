@@ -12,6 +12,8 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:coverage": "npm test -- --coverage",
+    "test:integration": "npm t -- --config ./jest.integration.config.js",
+    "test:fb-api": "npm run test:integration -- ./tests/external/facebook-api.test.ts",
     "prepare": "husky install"
   },
   "keywords": [],
