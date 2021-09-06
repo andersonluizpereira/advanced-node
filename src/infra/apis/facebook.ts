@@ -34,7 +34,7 @@ export class FacebookApi implements LoadFacebookUserApi {
         name: userInfo.name,
         email: userInfo.email
       }
-    } catch (error) {
+    } catch {
       return undefined
     }
   }
