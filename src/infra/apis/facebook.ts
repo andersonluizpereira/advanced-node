@@ -19,6 +19,7 @@ type UserInfo = {
 
 type Params = LoadFacebookUserApi.Params
 type Result = LoadFacebookUserApi.Result
+
 export class FacebookApi implements LoadFacebookUserApi {
   private readonly baseUrl = 'https://graph.facebook.com'
 
@@ -45,13 +46,13 @@ export class FacebookApi implements LoadFacebookUserApi {
     })
   }
 
-  private async getDebugToken (params: string): Promise<DebugToken> {
+  private async getDebugToken (clientToken: string): Promise<DebugToken> {
     const appToken = await this.getAppToken()
     return this.httpClient.get({
       url: `${this.baseUrl}/debug_token`,
       params: {
         access_token: appToken.access_token,
-        input_token: params
+        input_token: clientToken
       }
     })
   }

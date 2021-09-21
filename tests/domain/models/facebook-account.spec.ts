@@ -6,6 +6,7 @@ describe('FacebookAccount', () => {
     email: 'any_fb_email',
     facebookId: 'any_fb_id'
   }
+
   it('should create with facebook data only', () => {
     const sut = new FacebookAccount(fbData)
 
@@ -15,6 +16,7 @@ describe('FacebookAccount', () => {
       facebookId: 'any_fb_id'
     })
   })
+
   it('should update name if its empty', () => {
     const accountData = { id: 'any_id' }
 
@@ -27,10 +29,12 @@ describe('FacebookAccount', () => {
       facebookId: 'any_fb_id'
     })
   })
+
   it('should not update name if its not empty', () => {
     const accountData = { id: 'any_id', name: 'any_name' }
 
     const sut = new FacebookAccount(fbData, accountData)
+
     expect(sut).toEqual({
       id: 'any_id',
       name: 'any_name',

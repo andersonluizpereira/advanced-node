@@ -1,5 +1,4 @@
-import cors from 'cors'
-import { Express, json, Router } from 'express'
+import { Router, Express } from 'express'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
