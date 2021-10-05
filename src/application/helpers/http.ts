@@ -20,12 +20,12 @@ export const unauthorized = (): HttpResponse<Error> => ({
   data: new UnauthorizedError()
 })
 
-export const serverError = (error: Error): HttpResponse<Error> => ({
-  statusCode: 500,
-  data: new ServerError(error)
-})
-
 export const forbidden = (): HttpResponse<Error> => ({
   statusCode: 403,
   data: new ForbiddenError()
+})
+
+export const serverError = (error: Error): HttpResponse<Error> => ({
+  statusCode: 500,
+  data: new ServerError(error)
 })
