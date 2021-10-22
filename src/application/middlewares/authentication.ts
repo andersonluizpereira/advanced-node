@@ -1,6 +1,6 @@
 import { forbidden, HttpResponse, ok } from '@/application/helpers'
-import { RequiredStringValidator } from '@/application/validation'
 import { Middleware } from '@/application/middlewares'
+import { RequiredStringValidator } from '@/application/validation'
 
 type HttpRequest = { authorization: string }
 type Model = Error | { userId: string }
