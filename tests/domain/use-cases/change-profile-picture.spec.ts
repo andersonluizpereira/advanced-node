@@ -3,6 +3,7 @@ import { mock } from 'jest-mock-extended'
 type Setup = (fileStorage: UploadFile, crypto: UUIDGenerator) => ChangeProfilePicture
 type Input = { id: string, file: Buffer }
 type ChangeProfilePicture = (input: Input) => Promise<void>
+
 const setupChangeProfilePicture: Setup = (fileStorage, crypto) => async ({ id, file }) => {
   await fileStorage.upload({ file, key: crypto.uuid({ key: id }) })
 }
@@ -32,7 +33,9 @@ describe('ChangeProfilePicture', () => {
     const crypto = mock<UUIDGenerator>()
     crypto.uuid.mockReturnValue(uuid)
     const sut = setupChangeProfilePicture(fileStorage, crypto)
+
     await sut({ id: 'any_id', file })
+
     expect(fileStorage.upload).toHaveBeenCalledWith({ file, key: uuid })
     expect(fileStorage.upload).toHaveBeenCalledTimes(1)
   })
