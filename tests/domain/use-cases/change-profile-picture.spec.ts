@@ -1,4 +1,4 @@
-import { DeleteFile, UploadFile, UUIDGenerator } from '@/domain/contracts/gateways'
+import { UploadFile, UUIDGenerator, DeleteFile } from '@/domain/contracts/gateways'
 import { SaveUserPicture, LoadUserProfile } from '@/domain/contracts/repos'
 import { UserProfile } from '@/domain/entities'
 import { ChangeProfilePicture, setupChangeProfilePicture } from '@/domain/use-cases'
@@ -71,15 +71,22 @@ describe('ChangeProfilePicture', () => {
       pictureUrl: 'any_url',
       initials: 'any_initials'
     }))
+
     const result = await sut({ id: 'any_id', file })
 
-    expect(result).toMatchObject({ pictureUrl: 'any_url', initials: 'any_initials' })
+    expect(result).toMatchObject({
+      pictureUrl: 'any_url',
+      initials: 'any_initials'
+    })
   })
 
   it('should call DeleteFile when file exists and SaveUserPicture throws', async () => {
     userProfileRepo.savePicture.mockRejectedValueOnce(new Error())
     expect.assertions(2)
-    sut({ id: 'any_id', file }).catch(() => {
+
+    const promise = sut({ id: 'any_id', file })
+
+    promise.catch(() => {
       expect(fileStorage.delete).toHaveBeenCalledWith({ key: uuid })
       expect(fileStorage.delete).toHaveBeenCalledTimes(1)
     })
@@ -87,15 +94,48 @@ describe('ChangeProfilePicture', () => {
 
   it('should not call DeleteFile when file does not exists and SaveUserPicture throws', async () => {
     userProfileRepo.savePicture.mockRejectedValueOnce(new Error())
-    sut({ id: 'any_id', file: undefined }).catch(() => {
+    expect.assertions(1)
+
+    const promise = sut({ id: 'any_id', file: undefined })
+
+    promise.catch(() => {
       expect(fileStorage.delete).not.toHaveBeenCalled()
     })
   })
 
-  it('should rethrows SaveUserPicture throws', async () => {
+  it('should rethrow if SaveUserPicture throws', async () => {
     const error = new Error('save_error')
     userProfileRepo.savePicture.mockRejectedValueOnce(error)
+
+    const promise = sut({ id: 'any_id', file })
+
+    await expect(promise).rejects.toThrow(error)
+  })
+
+  it('should rethrow if UploadFile throws', async () => {
+    const error = new Error('upload_error')
+    fileStorage.upload.mockRejectedValueOnce(error)
+
+    const promise = sut({ id: 'any_id', file })
+
+    await expect(promise).rejects.toThrow(error)
+  })
+
+  it('should rethrow if LoadUserProfile throws', async () => {
+    const error = new Error('load_error')
+    userProfileRepo.load.mockRejectedValueOnce(error)
+
     const promise = sut({ id: 'any_id', file: undefined })
+
+    await expect(promise).rejects.toThrow(error)
+  })
+
+  it('should rethrow if UUIDGenerator throws', async () => {
+    const error = new Error('uuid_error')
+    crypto.uuid.mockImplementationOnce(() => { throw error })
+
+    const promise = sut({ id: 'any_id', file })
+
     await expect(promise).rejects.toThrow(error)
   })
 })
