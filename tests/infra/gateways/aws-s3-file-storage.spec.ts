@@ -4,7 +4,7 @@ import { mocked } from 'ts-jest/utils'
 
 jest.mock('aws-sdk')
 
-class AwsS3FileStorage implements UploadFile {
+export default class AwsS3FileStorage implements UploadFile {
   constructor (accessKey: string, secret: string, private readonly bucket: string) {
     config.update({
       credentials: {
@@ -79,5 +79,12 @@ describe('AwsS3FileStorage', () => {
   it('should return encoded imageUrl', async () => {
     const imageUrl = await sut.upload({ key: 'any key', file })
     expect(imageUrl).toBe(`https://${bucket}.s3.amazonaws.com/any%20key`)
+  })
+
+  it('should rethrow if putObject throws', async () => {
+    const error = new Error('upload_error')
+    putObjectPromiseSpy.mockRejectedValueOnce(error)
+    const promise = sut.upload({ key, file })
+    await expect(promise).rejects.toThrow(error)
   })
 })
