@@ -1,3 +1,4 @@
+
 export interface SaveUserPicture {
   savePicture: (input: SaveUserPicture.Input) => Promise<void>
 }
@@ -12,5 +13,5 @@ export interface LoadUserProfile {
 
 export namespace LoadUserProfile {
   export type Input = { id: string }
-  export type Output = { name?: string | undefined }
+  export type Output = { name?: string } | undefined
 }
