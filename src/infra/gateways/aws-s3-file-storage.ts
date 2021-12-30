@@ -1,4 +1,5 @@
 import { UploadFile, DeleteFile } from '@/domain/contracts/gateways'
+
 import { config, S3 } from 'aws-sdk'
 
 export class AwsS3FileStorage implements UploadFile, DeleteFile {

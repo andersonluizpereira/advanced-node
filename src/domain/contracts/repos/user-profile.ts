@@ -1,4 +1,3 @@
-
 export interface SaveUserPicture {
   savePicture: (input: SaveUserPicture.Input) => Promise<void>
 }
