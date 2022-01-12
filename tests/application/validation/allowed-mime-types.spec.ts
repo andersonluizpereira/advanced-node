@@ -3,7 +3,7 @@ import { AllowedMimeTypes } from '@/application/validation'
 
 describe('AllowedMimeTypes', () => {
   it('should return InvalidMimeTypeError if value is invalid', () => {
-    const sut = new AllowedMimeTypes(['png'], 'image/jpeg')
+    const sut = new AllowedMimeTypes(['png'], 'image/jpg')
 
     const error = sut.validate()
 

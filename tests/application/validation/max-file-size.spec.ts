@@ -1,8 +1,8 @@
 import { MaxFileSizeError } from '@/application/errors'
 import { MaxFileSize } from '@/application/validation'
 
-describe('AllowedMimeTypes', () => {
-  it('should return InvalidMimeTypeError if value is invalid', () => {
+describe('MaxFileSize', () => {
+  it('should return MaxFileSizeError if value is invalid', () => {
     const invalidBuffer = Buffer.from(new ArrayBuffer(6 * 1024 * 1024))
     const sut = new MaxFileSize(5, invalidBuffer)
 
