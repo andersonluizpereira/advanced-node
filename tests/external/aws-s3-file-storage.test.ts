@@ -1,5 +1,6 @@
 import { env } from '@/main/config/env'
 import { AwsS3FileStorage } from '@/infra/gateways'
+
 import axios from 'axios'
 
 describe('Aws S3 Integration Tests', () => {
@@ -13,16 +14,17 @@ describe('Aws S3 Integration Tests', () => {
     )
   })
 
-  it('should upload and delete from aws s3', async () => {
+  it('should upload and delete image from aws s3', async () => {
     const onePixelImage = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+M/A8B8ABQAB/6Zcm10AAAAASUVORK5CYII='
     const file = Buffer.from(onePixelImage, 'base64')
-    const key = 'any_key.png'
-    const pictureUrl = await sut.upload({ key, file })
+    const fileName = 'any_file_name.png'
 
-    expect((await (await axios.get(pictureUrl)).status)).toBe(200)
+    const pictureUrl = await sut.upload({ fileName, file })
 
-    await sut.delete({ key })
+    expect((await axios.get(pictureUrl)).status).toBe(200)
 
-    await expect((await axios.get(pictureUrl))).rejects.toThrow()
+    await sut.delete({ fileName })
+
+    await expect(axios.get(pictureUrl)).rejects.toThrow()
   })
 })
