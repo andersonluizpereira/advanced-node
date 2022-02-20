@@ -28,32 +28,32 @@ describe('UserProfile', () => {
   })
 
   it('should create initials with first letter of first and last names', () => {
-    sut.setPicture({ name: 'rodrigo da silva manguinho' })
+    sut.setPicture({ name: 'anderson pereira' })
 
     expect(sut).toEqual({
       id: 'any_id',
       pictureUrl: undefined,
-      initials: 'RM'
+      initials: 'AP'
     })
   })
 
   it('should create initials with first two letters of first name', () => {
-    sut.setPicture({ name: 'rodrigo' })
+    sut.setPicture({ name: 'anderson' })
 
     expect(sut).toEqual({
       id: 'any_id',
       pictureUrl: undefined,
-      initials: 'RO'
+      initials: 'AN'
     })
   })
 
   it('should create initials with first letter', () => {
-    sut.setPicture({ name: 'r' })
+    sut.setPicture({ name: 'a' })
 
     expect(sut).toEqual({
       id: 'any_id',
       pictureUrl: undefined,
-      initials: 'R'
+      initials: 'A'
     })
   })
 

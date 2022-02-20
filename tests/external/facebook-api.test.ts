@@ -18,9 +18,9 @@ describe('Facebook Api Integration Tests', () => {
     const fbUser = await sut.loadUser({ token: env.facebookApi.accessToken })
 
     expect(fbUser).toEqual({
-      facebookId: '728079287908964',
-      email: 'mango_pgftrsp_dev@tfbnw.net',
-      name: 'Mango Dev'
+      facebookId: '108749701544034',
+      email: 'anderson_rsqjwqs_teste@tfbnw.net',
+      name: 'Anderson Teste'
     })
   })
 
