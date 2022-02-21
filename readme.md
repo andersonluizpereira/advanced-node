@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/andersonluizpereira/advanced-node/badge.svg?branch=master)](https://coveralls.io/github/andersonluizpereira/advanced-node?branch=master)
+
 #https://medium.com/trainingcenter/localstack-testando-servi%C3%A7os-aws-7f9f24de293c
 
 #aws
