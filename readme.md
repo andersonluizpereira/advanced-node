@@ -1,26 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/andersonluizpereira/advanced-node/badge.svg?branch=master)](https://coveralls.io/github/andersonluizpereira/advanced-node?branch=master)
-
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=coverage)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=bugs)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
-
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
+[![Coverage Status](https://coveralls.io/repos/github/andersonluizpereira/advanced-node/badge.svg?branch=master)](https://coveralls.io/github/andersonluizpereira/advanced-node?branch=master) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=coverage)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=bugs)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=andersonluizpereira_advanced-node&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=andersonluizpereira_advanced-node)
 
 #https://medium.com/trainingcenter/localstack-testando-servi%C3%A7os-aws-7f9f24de293c
 
